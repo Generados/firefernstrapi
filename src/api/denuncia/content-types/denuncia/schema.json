@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "denuncias",
+  "info": {
+    "singularName": "denuncia",
+    "pluralName": "denuncias",
+    "displayName": "denuncia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "Local": {
+      "type": "string",
+      "required": true
+    },
+    "descricao": {
+      "type": "text",
+      "required": true
+    },
+    "usuario": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::usuario.usuario",
+      "inversedBy": "denuncias"
+    }
+  }
+}
